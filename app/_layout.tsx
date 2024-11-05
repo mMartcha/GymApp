@@ -1,19 +1,17 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
+import { GymContextProvider } from '@/context/GymContext';
+import { Roboto_400Regular, Roboto_700Bold } from '@expo-google-fonts/roboto';
 import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 import 'react-native-reanimated';
 
-import { useColorScheme } from '@/hooks/useColorScheme';
-
-// Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
-  const colorScheme = useColorScheme();
   const [loaded] = useFonts({
-    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
+    Roboto_400Regular,
+    Roboto_700Bold
   });
 
   useEffect(() => {
@@ -27,11 +25,23 @@ export default function RootLayout() {
   }
 
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
+    <GymContextProvider>
+
+      <Stack screenOptions={{headerShown:false}}>
+
+        <Stack.Screen
+          name='index'
+        />
+        <Stack.Screen
+          name='(stack)/sign/index'
+        />
+
+        <Stack.Screen
+          name='(stack)/create/index'
+        />
+
       </Stack>
-    </ThemeProvider>
+    </GymContextProvider>
+
   );
 }
