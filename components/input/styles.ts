@@ -6,7 +6,8 @@ export const styles = StyleSheet.create({
         backgroundColor:theme.colors.gray500,
         borderRadius:8,
         height:55,
-        padding:12
+        padding:12,
+        borderWidth:1
         
     }
 })

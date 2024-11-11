@@ -33,11 +33,11 @@ export default function RootLayout() {
           name='index'
         />
         <Stack.Screen
-          name='(stack)/sign/index'
+          name='(stack)/signIn/index'
         />
 
         <Stack.Screen
-          name='(stack)/create/index'
+          name='(stack)/signUp/index'
         />
 
       </Stack>

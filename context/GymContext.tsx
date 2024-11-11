@@ -15,6 +15,9 @@ type GymContextProps = {
     setSubmit: React.Dispatch<React.SetStateAction<SubmitExercise[]>>
     allExercises: ExerciseType[]
     setAllExercises: React.Dispatch<React.SetStateAction<ExerciseType[]>>
+    userPhoto: string
+    setUserPhoto: React.Dispatch<React.SetStateAction<string>>
+
     // backExercises:ExerciseType[]
     // setBackExercises:React.Dispatch<React.SetStateAction<ExerciseType[]>>
     // bicepsExercises: ExerciseType[]
@@ -118,13 +121,16 @@ export function GymContextProvider ({children}: GymContextProviderProps){
     
     const [submit, setSubmit] = useState<SubmitExercise[]>([])
     
+    const [userPhoto, setUserPhoto] = useState("https://media.licdn.com/dms/image/v2/D5603AQHJvThaubWfqg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1709226276317?e=1736380800&v=beta&t=T3W2ohhcmujS2WUT3QLAXCichDH1SxIZ3NSQHBaiU8g")
+
 
     return(
         <GymContext.Provider value={{
             selectedGroup,setSelectedGroup,
             muscleGroups,setMuscleGroups,
             submit, setSubmit,
-            allExercises, setAllExercises
+            allExercises, setAllExercises,
+            userPhoto,setUserPhoto
         }}>
             {children}
         </GymContext.Provider>

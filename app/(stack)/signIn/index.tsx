@@ -50,7 +50,7 @@ export default function SignIn(){
                     borderColor={theme.colors.green700}
                     borderWidth={1}
                     borderRad={6}
-                    onPress={() => router.navigate('/(stack)/create')}
+                    onPress={() => router.navigate('/(stack)/signUp')}
                 />
             </View>
 

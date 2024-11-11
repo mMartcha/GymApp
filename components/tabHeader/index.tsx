@@ -2,12 +2,18 @@ import { Image, Text, View } from "react-native";
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { styles } from "./styles";
 import { theme } from "@/global/theme";
+import { useContext } from "react";
+import { GymContext } from "@/context/GymContext";
 
 export default function TabHeader(){
+
+    const {userPhoto,setUserPhoto} = useContext(GymContext)
+
+
     return(
         <View style={styles.container}>
             <Image
-                source={{uri:"https://media.licdn.com/dms/image/v2/D5603AQHJvThaubWfqg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1709226276317?e=1736380800&v=beta&t=T3W2ohhcmujS2WUT3QLAXCichDH1SxIZ3NSQHBaiU8g"}}
+                source={{uri:userPhoto}}
                 height={50}
                 width={50}
                 borderRadius={100}

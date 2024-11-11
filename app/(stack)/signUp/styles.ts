@@ -18,10 +18,10 @@ export const styles = StyleSheet.create({
         
     },
     pressableView:{
-        top:210
+        top:200
     },
     lowerPressableView:{
-        top:200,
+        top:140,
     },
     lowerPressableViewText:{
         color:"#fff",
